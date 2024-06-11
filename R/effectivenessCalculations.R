@@ -12,7 +12,7 @@
 #' @return output
 #'
 #' @export
-calculateBaselineInadequacyAfe <- function(survey, micronutrient, intake_thresholds) {
+calculateBaselineInadequacyAfe <- function(survey, micronutrient, intakeThresholds) {
   .libPaths( "/usr/local/lib/opencpu/apps/ocpu_github_dzvoti_effectivenessCalculations" )
   mapsdata::loadData(survey)
   result <- effectivenessCalculations::calculateBaselineInadequacyAfe(householdConsumptionDf = householdConsumption, householdDetailsDf = householdDetails, nctListDf = nctList, intakeThresholdsDf = intakeThresholds, MNList = micronutrient)
@@ -33,7 +33,7 @@ calculateBaselineInadequacyAfe <- function(survey, micronutrient, intake_thresho
 #' @return output
 #'
 #' @export
-calculateBaselineInadequacyCnd <- function(survey, micronutrient, intake_thresholds) {
+calculateBaselineInadequacyCnd <- function(survey, micronutrient, intakeThresholds) {
   .libPaths( "/usr/local/lib/opencpu/apps/ocpu_github_dzvoti_effectivenessCalculations" )
   mapsdata::loadData(survey)
   result <- effectivenessCalculations::calculateBaselineInadequacyCND(householdConsumptionDf = householdConsumption, householdDetailsDf = householdDetails, nctListDf = nctList, intakeThresholdsDf = intakeThresholds, MNList = micronutrient)
@@ -54,7 +54,7 @@ calculateBaselineInadequacyCnd <- function(survey, micronutrient, intake_thresho
 #' @return output
 #'
 #' @export
-calculatePreAndPostLSFFSummaries <- function(survey, micronutrient, intake_thresholds) {
+calculatePreAndPostLSFFSummaries <- function(survey, micronutrient, intakeThresholds) {
   .libPaths( "/usr/local/lib/opencpu/apps/ocpu_github_dzvoti_effectivenessCalculations" )
   mapsdata::loadData(survey)
   result <- effectivenessCalculations::calculate_pre_and_post_lsff_summaries_afe(householdConsumptionDf = householdConsumption, householdDetailsDf = householdDetails, nctListDf = nctList, intakeThresholdsDf = intakeThresholds, MNList = micronutrient)

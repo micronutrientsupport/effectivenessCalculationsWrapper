@@ -15,7 +15,7 @@
 calculateBaselineInadequacyAfe <- function(survey, intake_thresholds) {
   .libPaths( "/usr/local/lib/opencpu/apps/ocpu_github_dzvoti_effectivenessCalculations" )
   mapsdata::loadData(survey)
-  baselineAfe <- effectivenessCalculations::calculateBaselineInadequacyAfe(householdConsumptionDf = householdConsumption, householdDetailsDf = householdDetails, nctListDf = nctList, intakeThresholdsDf = intakeThresholds)
+  baselineAfe <- effectivenessCalculations::calculateBaselineInadequacyAfe(householdConsumptionDf = householdConsumption, householdDetailsDf = householdDetails, nctListDf = nctList, intakeThresholdsDf = intake_thresholds)
   return(baselineAfe)
 }
 

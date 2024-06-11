@@ -60,3 +60,11 @@ calculatePreAndPostLSFFSummaries <- function(survey, micronutrient, intakeThresh
   result <- effectivenessCalculations::calculate_pre_and_post_lsff_summaries_afe(householdConsumptionDf = householdConsumption, householdDetailsDf = householdDetails, nctListDf = nctList, intakeThresholdsDf = intakeThresholds, MNList = micronutrient)
   return(result)
 }
+
+
+calculateBaselinePrevalenceHighIntakeRiskAfe <- function(survey, micronutrient, intakeThresholds) {
+  .libPaths( "/usr/local/lib/opencpu/apps/ocpu_github_dzvoti_effectivenessCalculations" )
+  mapsdata::loadData(survey)
+  result <- effectivenessCalculations::calculateBaselinePrevalenceHighIntakeRiskAfe(householdConsumptionDf = householdConsumption, householdDetailsDf = householdDetails, nctListDf = nctList, intakeThresholdsDf = intakeThresholds, MNList = micronutrient)
+  return(result)
+}

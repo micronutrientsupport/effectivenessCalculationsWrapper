@@ -57,7 +57,7 @@ calculateBaselineInadequacyCnd <- function(survey, micronutrient, intakeThreshol
 calculatePreAndPostLSFFSummaries <- function(survey, micronutrient, intakeThresholds, fortifiableFoodItems, fortificationLevels) {
   .libPaths( "/usr/local/lib/opencpu/apps/ocpu_github_dzvoti_effectivenessCalculations" )
   mapsdata::loadData(survey)
-  result <- effectivenessCalculations::calculate_pre_and_post_lsff_summaries_afe(householdConsumptionDf = householdConsumption, householdDetailsDf = householdDetails, nctListDf = nctList, intakeThresholdsDf = intakeThresholds, MNList = micronutrient, fortifiableFoodItemsDf = fortifiableFoodItems, fortificationLevelsDf = fortificationLevels, years = c(2021,2022,2023,2024,2025,2026,2027,2028,2029,2030))
+  result <- effectivenessCalculations::calculate_pre_and_post_lsff_summaries_afe(householdConsumptionDf = householdConsumption, householdDetailsDf = householdDetails, nctListDf = nctList, intakeThresholdsDf = intakeThresholds, MNList = micronutrient, fortifiableFoodItemsDf = fortifiableFoodItems, fortificationLevelsDf = fortificationLevels, years = c(2021,2022,2023,2024,2025,2026,2027,2028,2029,2030), aggregationGroup = c("admin0Name"))
   return(result)
 }
 

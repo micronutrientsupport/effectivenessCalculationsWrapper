@@ -13,9 +13,10 @@
 #'
 #' @export
 calculatePreAndPostLSFFSummariesAfe <- function(survey, micronutrient, intakeThresholds, fortifiableFoodItems, fortificationLevels, aggregationFields) {
-  .libPaths( "/usr/local/lib/opencpu/apps/ocpu_github_dzvoti_effectivenessCalculations" )
+  .libPaths( "/usr/local/lib/opencpu/apps/ocpu_github_micronutrientsupport_effectivenessCalculations" )
   mapsdata::loadData(survey)
-  result <- effectivenessCalculations::calculate_pre_and_post_lsff_summaries_afe(householdConsumptionDf = householdConsumption, householdDetailsDf = householdDetails, nctListDf = nctList, intakeThresholdsDf = intakeThresholds, MNList = micronutrient, fortifiableFoodItemsDf = fortifiableFoodItems, fortificationLevelsDf = fortificationLevels, years = c(2021,2022,2023,2024,2025,2026,2027,2028,2029,2030), aggregationGroup = aggregationFields)
+  result <- effectivenessCalculations::calculate_pre_and_post_fortification_summaries(householdConsumptionDf = householdConsumption, householdDetailsDf = householdDetails, nctListDf = nctList, intakeThresholdsDf = intakeThresholds, MNList = micronutrient, fortifiableFoodItemsDf = fortifiableFoodItems, fortificationLevelsDf = fortificationLevels, years = c(2021,2022,2023,2024,2025,2026,2027,2028,2029,2030), aggregationGroup = aggregationFields, metric = "AFE",
+    method = "LSFF")
   return(result)
 }
 
@@ -34,8 +35,9 @@ calculatePreAndPostLSFFSummariesAfe <- function(survey, micronutrient, intakeThr
 #'
 #' @export
 calculatePreAndPostLSFFSummariesCnd <- function(survey, micronutrient, intakeThresholds, fortifiableFoodItems, fortificationLevels, aggregationFields) {
-  .libPaths( "/usr/local/lib/opencpu/apps/ocpu_github_dzvoti_effectivenessCalculations" )
+  .libPaths( "/usr/local/lib/opencpu/apps/ocpu_github_micronutrientsupport_effectivenessCalculations" )
   mapsdata::loadData(survey)
-  result <- effectivenessCalculations::calculate_pre_and_post_lsff_summaries_cnd(householdConsumptionDf = householdConsumption, householdDetailsDf = householdDetails, nctListDf = nctList, intakeThresholdsDf = intakeThresholds, MNList = micronutrient, fortifiableFoodItemsDf = fortifiableFoodItems, fortificationLevelsDf = fortificationLevels, years = c(2021,2022,2023,2024,2025,2026,2027,2028,2029,2030), aggregationGroup = aggregationFields)
+  result <- effectivenessCalculations::calculate_pre_and_post_fortification_summaries(householdConsumptionDf = householdConsumption, householdDetailsDf = householdDetails, nctListDf = nctList, intakeThresholdsDf = intakeThresholds, MNList = micronutrient, fortifiableFoodItemsDf = fortifiableFoodItems, fortificationLevelsDf = fortificationLevels, years = c(2021,2022,2023,2024,2025,2026,2027,2028,2029,2030), aggregationGroup = aggregationFields, metric = "CND",
+    method = "LSFF")
   return(result)
 }
